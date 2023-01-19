@@ -40,3 +40,20 @@ Hey there :D how are you?, tell me, what are you thinking about?
 Wow you wrote your thoughts in 14 words, that is amazing :D
 ```
 
+## Project #3 `Acronym`
+`acronym(text: str)`: It takes the first letter of each word that the text contains.
+<br/>
+
+`play()`: It asks the user to type some phrase to transform into an acronym.
+
+### **Run this project:**
+```
+python3 acronym.py
+```
+
+**Output**
+```
+Which phrase do you want to transform into an acronym? As soon As posible
+The acronym of "As soon As posible" is "ASAP"
+```
+
