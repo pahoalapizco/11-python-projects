@@ -24,3 +24,19 @@ Type a number between 1 and 1000 to evaluate if is an odd number: 8
 8 is not an odd number
 ```
 
+## Project #2 `Words counter`
+`word_counter(text: str)`: It takes a string and count the total of words on it.
+<br/>
+`play()`: It asks the user to type some text with its thoughts and then show how many words have been found in that text.
+### **Run this project:**
+```
+python3 words_counter.py
+```
+
+**Output**
+```
+Hey there :D how are you?, tell me, what are you thinking about? 
+>>> Hi, now I'm thinking and practicing how to improve my coding skills with python
+Wow you wrote your thoughts in 14 words, that is amazing :D
+```
+
