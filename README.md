@@ -57,3 +57,39 @@ Which phrase do you want to transform into an acronym? As soon As posible
 The acronym of "As soon As posible" is "ASAP"
 ```
 
+## Project #3 `Guess the number`
+In this little game, the user has to try to guess a number between 1 and 50 in three opportunities.
+Each try could have a clue to help the user wins the game, only if the user want it.
+
+`get_user_number()`: This function asks the user for a number and evaluates if the answer is a number and belongs to the range 1-50.
+<br/>
+
+`guess_number(user_number: int)`: This functions evaluates if the user's number is equal to the secrert number.
+<br/>
+
+`play()`: It starts a new game, in case the user loses a try, the game shows a menu with the following options:
+```
+  - If you want to continue with a clue type: y
+  - If you want to continue without a clue type: n
+  - If you want to finish the game type any key
+```
+
+### **Run this project:**
+```
+python3 guess_the_number.py
+```
+
+**Output**
+```
+Hello, you have 3 opportunities to guess the secret number.
+Try # 1
+Try to guess the number, type a number between 1 and 50: 5
+Sorry, 5 is not the secret number.
+
+  - If you want to continue with a clue type: y
+  - If you want to continue without a clue type: n
+  - If you want to finish the game type any key
+
+
+...
+```
