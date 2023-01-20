@@ -57,7 +57,7 @@ Which phrase do you want to transform into an acronym? As soon As posible
 The acronym of "As soon As posible" is "ASAP"
 ```
 
-## Project #3 `Guess the number`
+## Project #4 `Guess the number`
 In this little game, the user has to try to guess a number between 1 and 50 in three opportunities.
 Each try could have a clue to help the user wins the game, only if the user want it.
 
@@ -90,6 +90,35 @@ Sorry, 5 is not the secret number.
   - If you want to continue without a clue type: n
   - If you want to finish the game type any key
 
-
 ...
+```
+
+## Project #5 `Tips Calculator`
+This project can help to calculate the total tips you want to pay for a service
+
+Main functions:
+`calculate(subtotal: float, tip: float)`: This functiones execute the calculos `subtotal * tips`, first of all transform the tips into percent value (tips/100)
+<br/>
+
+`validate_float_input(value: str)`: It Evaluates if the value is float.
+<br/>
+
+Test function:
+`run()`: Ask the user the amount of subtotal and tips, then shows the total amount.
+
+### **Run this project:**
+```
+python3 tip-calculator.py
+```
+
+**Output**
+```
+How mush is on your check? $100
+How many perfent of tip do you want to pay? 10
+ 
+  This is your total check:
+    Sub total: $ 100.0
+         tips: $ 10.0  10.0%
+    _________________________
+        total: $ 110.0
 ```
