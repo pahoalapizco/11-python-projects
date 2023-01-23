@@ -1,4 +1,5 @@
 from more_itertools import locate 
+from levels import levels as lvl
 
 def transform_into_unders(text):
   text = text.split()
@@ -57,9 +58,49 @@ def draw(errors):
 
   print(drawing)
 
+def select_level():
+  text = ''
+  level_options = lvl.get_level_options()
+  print('Welcome to the game "The Hangman", before to start you need to select a level from the list below')
+  
+  while True:
+    user_level = input('   \n'.join(level_options) + '\n==> ')
+    
+    if user_level.lower() not in level_options:
+      print(f'{user_level} is not in level optios, please trye again')
+    else:
+      text = user_level
+      break
+
+  return text
+
+def select_type(level):
+  text = ''
+  type_options = lvl.get_type_of_game(level)
+
+  print('Select a type of game from level {level}')
+  
+  while True:
+    user_type = input('   \n'.join(type_options) + '\n==> ')
+    
+    if user_type.lower() not in type_options:
+      print(f'{user_type} is not in type optios from level {level}, please trye again')
+    else:
+      text = user_type
+      break
+    
+  return text
+
+def get_secret_name():
+  level = select_level()
+  user_type = select_type(level)
+
+  secret_name = lvl.get_name(level, user_type)
+
+  return secret_name
 
 def play():
-  text = 'Hello world'.upper()
+  text = get_secret_name().upper()
   chances = 6
   game = transform_into_unders(text)
   hits = 0
@@ -79,7 +120,6 @@ def play():
       hits += occurrences
     
     if hits == len(text.strip()): break
-    print(chances)
 
 
   draw(6 - chances)
