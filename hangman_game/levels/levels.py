@@ -1,7 +1,7 @@
 import random
 
 levels = {
-  'easey': {
+  'easy': {
     'songs': ('Imagine', 'Hey Jude', 'One', 'Unholy', 'Flowers'),
     'movies': ('The menu', 'John Wick', 'Transcendence', 'Matrix', 'Gravity')      
   },

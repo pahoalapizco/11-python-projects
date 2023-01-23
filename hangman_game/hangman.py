@@ -78,7 +78,7 @@ def select_type(level):
   text = ''
   type_options = lvl.get_type_of_game(level)
 
-  print('Select a type of game from level {level}')
+  print(f'Select a type of game from level {level}')
   
   while True:
     user_type = input('   \n'.join(type_options) + '\n==> ')
