@@ -122,3 +122,134 @@ How many perfent of tip do you want to pay? 10
     _________________________
         total: $ 110.0
 ```
+
+## Project 6 - The Hangman Game
+This project is the traditional game "The Hangman" where you have to guess a word or sentence with only 6 chances to make a mistake, 
+each mistake draws a body part of "The Hangman" until it will be completed.
+<br />
+
+This game has three leves: Easy, Mid and Hard.
+<br />
+Each level has two types of game: Songs and Movies.
+<br />
+
+#### `How levels are represented in code`:
+```
+levels = {
+  'easy': {
+    'songs': (),
+    'movies': (),
+  }
+  ...
+}
+```
+This project uses a cutom module to get leves and types of game. 
+<br />
+The module's name is: level, it contains the folowing functions:
+
+`levels`: Dictionary with the lavels and types of game
+<br />
+
+`get_level_options()`: Returns all levels in the dictionary
+<br />
+
+`get_type_of_game(level)`: Returns all types of game of the selected level.
+<br />
+
+`get_name(level, game_type)`: Returns an aleatory name of the level and type of game selected.
+<br />
+
+The main code contains the folowing functinos:
+<br />
+
+`transform_into_unders(text)`: Takes a text and transforms each letter of it into an underscore.
+<br />
+
+`find_letter(letter, text, game)`: Takes the original text and validates if a letter exists on it, also validates if the letter is already in the game.
+<br />
+
+`draw(errors)`: This functions draws "The Hangman.
+<br />
+
+`select_level()` and `select_type(level)`: They ask to the user for a level and type of game. Each one validates if the user intput is correct. 
+<br />
+
+`get_secret_name()`: Returns the name of a song or movie that the user has to guess.
+<br />
+
+`play()`: Starts the game.
+<br />
+
+### Create virtual env and install dependencies before start the game
+```
+cd hangman_game
+python3 -m venv env
+source env/bin/activate
+
+pip install -r requirements.txt
+```
+
+### **Run this project:**
+```
+python3 hangman.py  
+```
+
+**Output**
+```
+Welcome to the game "The Hangman", before to start you need to select a level from the list below
+easy   
+mid   
+hard
+```
+**Intput**
+```
+==> easy
+```
+
+**Output**
+```
+Select a type of game from level easy
+songs   
+movies
+```
+**Intput**
+```
+==> songs
+```
+**Output**
+```
+|----------
+|         |
+|          
+|          
+|          
+|          
+
+_ _ _ _ _ _ _
+Which letter do you think is part of the text: 
+```
+```
+Which letter do you think is part of the text: a
+|----------
+|         |
+|         O
+|          
+|          
+|          
+
+_ _ _ _ _ _ _
+```
+```
+Which letter do you think is part of the text: e
+|----------
+|         |
+|         O
+|          
+|          
+|          
+
+_ _ _ _ E _ _
+Which letter do you think is part of the text: 
+
+...
+```
