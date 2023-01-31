@@ -1,13 +1,17 @@
 from more_itertools import locate
 from draws import draws
+from levels import choose_levels as chlvl
+
 class Hangman:
     
   def __init__(self):
     self.__draws = draws
     self.__underscores = []
+    self.__text_game = 'this is a text'.upper()
     self.errors = 0
-    self.text_game = ""
 
+
+  # Getter Properties
   @property
   def draw(self):
     if self.errors > 6:
@@ -18,13 +22,10 @@ class Hangman:
   @property
   def underscores(self):
     return self.__underscores
-  
-  @underscores.setter
-  def underscores(self, value):
-    self.__underscores = value
 
+  # General Methods
   def transform_text(self):
-    text = self.text_game.split()
+    text = self.__text_game.split()
     letters = []
 
     for word in text:
@@ -33,17 +34,22 @@ class Hangman:
       letters.append(" ")
 
     letters.pop() # delete last space.
-    self.underscores = [ '_' if char != ' ' else ' ' for char in letters]
+    self.__underscores = [ '_' if char != ' ' else ' ' for char in letters]
 
   def find_letter(self, letter):
-    indexes = list(locate(self.text_game, lambda char: char == letter))
+    indexes = list(locate(self.__text_game, lambda char: char == letter))
 
     if len(indexes) > 0:
       for idx in indexes:
         self.underscores[idx] = letter
 
-    return len(indexes), self.underscores
-  
+    return len(indexes)
+
+  def choose_level(self):
+    choose = chlvl.Choose()
+    self.__text_game = choose.choose_game('Welcome to the game "The Hangman", before to start you need to select a level from the list below')
+    print(self.__text_game)
+
   def print_game(self):
     idx = str(self.errors)
     print(draws[idx])
@@ -52,8 +58,6 @@ class Hangman:
 
 if __name__ == '__main__':
   game = Hangman()
-  game.text_game = "this is a text"
-  game.transform_text()
-  game.print_game()
-  print(game.find_letter("a"))
- 
+  game.choose_level()
+  # game.transform_text()
+  # game.print_game()
